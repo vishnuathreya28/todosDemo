@@ -6,4 +6,6 @@ router.get('/displayTodo', todoController.getTodos);
 
 router.post('/addTodo', todoController.CreateTodo);
 
+router.put('/updateTodo', todoController.UpdateTodo);
+
 module.exports = router;
