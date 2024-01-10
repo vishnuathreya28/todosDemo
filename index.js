@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const todoRoutes = require('./routes/todoRoutes');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 //acts as the middleware parsing the incoming request bodies before we use the data
 app.use(bodyParser.json());

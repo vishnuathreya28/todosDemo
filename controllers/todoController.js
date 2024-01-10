@@ -26,22 +26,22 @@ exports.CreateTodo = async(req, res) => {
     }
 }
 
-exports.updateTodo = async(req, res) => {
+exports.updateTodo = async (req, res) => {
     try {
         const todo = await Todo.findById(req.params.id);
-        if(!todo){
-            return res.status(404).json({message:'Todo Not Found'});
+        if (!todo) {
+            return res.status(404).json({ message: 'Todo Not Found' });
         }
-        todo.title = req.body.title || todo.title;
-        todo.description = req.body.description || todo.description;
-        todo.completed = req.body.completed || todo.completed;
+
+        // Toggle the 'completed' variable
+        todo.compeleted = true;
 
         const updatedTodo = await todo.save();
         res.json(updatedTodo);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};
 
 exports.deleteTodo = async(req, res) => {
     try {
