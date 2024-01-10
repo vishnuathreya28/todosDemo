@@ -19,7 +19,7 @@ mongoose.connection.on('error', (err) =>{
     console.log('Error Connecting to DB');
 });
 
-app.use('/api/todos',todoRoutes);
+app.use('/api/todos', todoRoutes);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`);
