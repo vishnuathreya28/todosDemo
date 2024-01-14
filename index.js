@@ -5,7 +5,7 @@ const todoRoutes = require('./routes/todoRoutes');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.port || 3001;
 
 //acts as the middleware parsing the incoming request bodies before we use the data
 app.use(bodyParser.json());
